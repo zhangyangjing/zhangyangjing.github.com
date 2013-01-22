@@ -1,12 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://zhangyangjing.github.com/blog/2013/01/22/first-blog-of-zyj/</loc>
+        <lastmod>2013-01-22T22:13:29+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://zhangyangjing.github.com/blog/archives/</loc>
-        <lastmod>2013-01-22T21:44:48+08:00</lastmod>
+        <lastmod>2013-01-22T22:13:29+08:00</lastmod>
     </url>
     <url>
         <loc>http://zhangyangjing.github.com/</loc>
-        <lastmod>2013-01-22T21:44:48+08:00</lastmod>
+        <lastmod>2013-01-22T22:13:29+08:00</lastmod>
     </url>
     <url>
         <loc>http://zhangyangjing.github.com/robots.txt</loc>
