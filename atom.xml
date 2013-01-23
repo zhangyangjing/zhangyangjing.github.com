@@ -4,7 +4,7 @@
   <title><![CDATA[Blog of Yangjing Zhang]]></title>
   <link href="http://zhangyangjing.github.com/atom.xml" rel="self"/>
   <link href="http://zhangyangjing.github.com/"/>
-  <updated>2013-01-23T16:19:26+08:00</updated>
+  <updated>2013-01-23T16:22:46+08:00</updated>
   <id>http://zhangyangjing.github.com/</id>
   <author>
     <name><![CDATA[Yangjing Zhang]]></name>
@@ -20,14 +20,10 @@
     <id>http://zhangyangjing.github.com/blog/2013/01/23/setup-vpn-l2tp-over-ipsec-on-ubuntu-with-linode-vps</id>
     <content type="html"><![CDATA[<h2>introduction</h2>
 
-<p>usage tools:</p>
-
-<ul>
-<li>openwan</li>
-<li>ppp</li>
-<li>xl2tpd</li>
-</ul>
-
+<p>usage tools:
+* openwan
+* ppp
+* xl2tpd</p>
 
 <h2>setp</h2>
 
@@ -35,7 +31,7 @@
 <li>install openwan</li>
 <li>install ppp</li>
 <li>install xl2tpd</li>
-<li>setup init script</li>
+<li>setup boot init script</li>
 </ul>
 
 
