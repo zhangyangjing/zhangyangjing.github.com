@@ -4,7 +4,7 @@
   <title><![CDATA[Blog of Yangjing Zhang]]></title>
   <link href="http://zhangyangjing.github.com/atom.xml" rel="self"/>
   <link href="http://zhangyangjing.github.com/"/>
-  <updated>2013-01-23T16:24:41+08:00</updated>
+  <updated>2013-01-23T16:26:18+08:00</updated>
   <id>http://zhangyangjing.github.com/</id>
   <author>
     <name><![CDATA[Yangjing Zhang]]></name>
@@ -22,11 +22,11 @@
 
 <p>usage tools:</p>
 
-<ul>
+<ol>
 <li>openwan</li>
 <li>ppp</li>
 <li>xl2tpd</li>
-</ul>
+</ol>
 
 
 <h2>setp</h2>
