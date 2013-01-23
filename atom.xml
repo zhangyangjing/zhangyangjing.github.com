@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://zhangyangjing.github.com/atom.xml" rel="self"/>
   <link href="http://zhangyangjing.github.com/"/>
-  <updated>2013-01-22T22:13:36+08:00</updated>
+  <updated>2013-01-23T16:08:51+08:00</updated>
   <id>http://zhangyangjing.github.com/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[setup VPN(l2tp over ipsec) on ubuntu with linode vps]]></title>
+    <link href="http://zhangyangjing.github.com/blog/2013/01/23/setup-vpn-l2tp-over-ipsec-on-ubuntu-with-linode-vps/"/>
+    <updated>2013-01-23T16:08:00+08:00</updated>
+    <id>http://zhangyangjing.github.com/blog/2013/01/23/setup-vpn-l2tp-over-ipsec-on-ubuntu-with-linode-vps</id>
+    <content type="html"><![CDATA[<h2>introduction</h2>
+
+<p>usage tools:</p>
+
+<ul>
+<li>openwan</li>
+<li>ppp</li>
+<li>xl2tpd</li>
+</ul>
+
+
+<h2>setp</h2>
+
+<ul>
+<li>install openwan</li>
+<li>install ppp</li>
+<li>install xl2tpd</li>
+<li>setup init script</li>
+</ul>
+
+
+<h2>link</h2>
+
+<ul>
+<li><p><a href="http://hi.baidu.com/ylm_tz/item/aa01cb01da1c94a03c42e2f2">http://hi.baidu.com/ylm_tz/item/aa01cb01da1c94a03c42e2f2</a></p></li>
+<li><p><a href="http://blog.tech4k.com/?p=745">http://blog.tech4k.com/?p=745</a></p></li>
+<li><p><a href="http://b.gkp.cc/2010/06/19/setup-ipsec-l2tp-on-centos-55/">http://b.gkp.cc/2010/06/19/setup-ipsec-l2tp-on-centos-55/</a></p></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[first blog of zyj]]></title>
