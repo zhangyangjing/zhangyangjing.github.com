@@ -163,28 +163,16 @@ xl2tpd support for &hellip;">
 <span class='line-number'>35</span>
 <span class='line-number'>36</span>
 <span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>version 2.0
 </span><span class='line'>
 </span><span class='line'>    config setup
-</span><span class='line'>
 </span><span class='line'>        nat_traversal=yes
-</span><span class='line'>
 </span><span class='line'>        virtual_private=%v4:10.0.0.0/8,%v4:192.168.0.0/16,%v4:172.16.0.0/12
-</span><span class='line'>
 </span><span class='line'>        oe=off
-</span><span class='line'>
 </span><span class='line'>        protostack=netkey
 </span><span class='line'>
 </span><span class='line'>    conn L2TP-PSK-NAT
-</span><span class='line'>
 </span><span class='line'>        rightsubnet=vhost:%priv
-</span><span class='line'>
 </span><span class='line'>        also=L2TP-PSK-noNAT
 </span><span class='line'>
 </span><span class='line'>    conn L2TP-PSK-noNAT
