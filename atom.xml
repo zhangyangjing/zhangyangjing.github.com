@@ -4,7 +4,7 @@
   <title><![CDATA[Blog of Yangjing Zhang]]></title>
   <link href="http://zhangyangjing.github.com/atom.xml" rel="self"/>
   <link href="http://zhangyangjing.github.com/"/>
-  <updated>2013-01-24T11:28:32+08:00</updated>
+  <updated>2013-01-24T11:44:02+08:00</updated>
   <id>http://zhangyangjing.github.com/</id>
   <author>
     <name><![CDATA[Yangjing Zhang]]></name>
@@ -84,11 +84,11 @@
 </span><span class='line'>    oe=off
 </span><span class='line'>    protostack=netkey
 </span><span class='line'>
-</span><span class='line'>conn L2TP-PSK-NAT
+</span><span class='line'>conn l2tp-psk-nat
 </span><span class='line'>    rightsubnet=vhost:%priv
-</span><span class='line'>    also=L2TP-PSK-noNAT
+</span><span class='line'>    also=l2tp-psk-nonat
 </span><span class='line'>
-</span><span class='line'>conn L2TP-PSK-noNAT
+</span><span class='line'>conn l2tp-psk-nonat
 </span><span class='line'>    authby=secret
 </span><span class='line'>    pfs=no
 </span><span class='line'>    auto=add
@@ -107,15 +107,59 @@
 
 <figure class='code'><figcaption><span>/etc/ipsec&#46;secrets </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>106.186.21.127 %any: PSK "7758521"</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>106.186.21.127 %any: psk "7758521"</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
-<li><p>install ppp</p>
+<li>install ppp</li>
+</ul>
 
-<p>  <code>
-  apt-get install ppp
- </code></p></li>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>apt-get install ppp</span></code></pre></td></tr></table></div></figure>
+
+
+<p>edit /etc/ppp/chap-secrets</p>
+
+<figure class='code'><figcaption><span>/etc/ppp/chap-secrets </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>zhangyangjing l2tpd 7758521 *</span></code></pre></td></tr></table></div></figure>
+
+
+<p>edit /etc/ppp/options.xltpd</p>
+
+<figure class='code'><figcaption><span>/etc/ppp/options&#46;xltpd </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>require-mschap-v2
+</span><span class='line'>ms-dns 8.8.8.8
+</span><span class='line'>ms-dns 8.8.4.4
+</span><span class='line'>asyncmap 0
+</span><span class='line'>auth
+</span><span class='line'>crtscts
+</span><span class='line'>lock
+</span><span class='line'>hide-password
+</span><span class='line'>mode
+</span><span class='line'>debug
+</span><span class='line'>name l2tpd
+</span><span class='line'>proxyarp
+</span><span class='line'>lcp-echo-interval 30
+</span><span class='line'>lcp-echo-failure 4</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
 <li><p>install xl2tpd</p>
 
 <p>  <code>
