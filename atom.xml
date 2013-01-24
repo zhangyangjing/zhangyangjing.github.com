@@ -4,7 +4,7 @@
   <title><![CDATA[Blog of Yangjing Zhang]]></title>
   <link href="http://zhangyangjing.github.com/atom.xml" rel="self"/>
   <link href="http://zhangyangjing.github.com/"/>
-  <updated>2013-01-24T14:08:34+08:00</updated>
+  <updated>2013-01-24T14:32:59+08:00</updated>
   <id>http://zhangyangjing.github.com/</id>
   <author>
     <name><![CDATA[Yangjing Zhang]]></name>
@@ -22,18 +22,16 @@
 
 <p>usage tools:</p>
 
-<ol>
-<li><p>openwan</p>
+<pre><code>1. openwan
 
-<p> <em>provide ipsec ability</em></p></li>
-<li><p>ppp</p>
+    *provide ipsec ability*
+2. ppp
 
-<p> <em>suport for ppp</em></p></li>
-<li><p>xl2tpd</p>
+    *suport for ppp*
+* xl2tpd
 
-<p>  <em>support for l2tp</em></p></li>
-</ol>
-
+    *support for l2tp*
+</code></pre>
 
 <h2>step</h2>
 
