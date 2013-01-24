@@ -196,13 +196,6 @@ xl2tpd support for &hellip;">
 </pre></td><td class='code'><pre><code class=''><span class='line'>apt-get install ppp</span></code></pre></td></tr></table></div></figure>
 
 
-<p>edit /etc/ppp/chap-secrets</p>
-
-<figure class='code'><figcaption><span>/etc/ppp/chap-secrets </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>zhangyangjing l2tpd 7758521 *</span></code></pre></td></tr></table></div></figure>
-
-
 <p>edit /etc/ppp/options.xltpd</p>
 
 <figure class='code'><figcaption><span>/etc/ppp/options&#46;xltpd </span></figcaption>
@@ -236,14 +229,75 @@ xl2tpd support for &hellip;">
 </span><span class='line'>lcp-echo-failure 4</span></code></pre></td></tr></table></div></figure>
 
 
-<ul>
-<li><p>install xl2tpd</p>
+<p>edit /etc/ppp/chap-secrets</p>
 
-<p>  <code>
-  apt-get install xl2tpd
- </code></p></li>
+<figure class='code'><figcaption><span>/etc/ppp/chap-secrets </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>zhangyangjing l2tpd 7758521 *</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>install xl2tpd</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>apt-get install xl2tpd</span></code></pre></td></tr></table></div></figure>
+
+
+<p>edit /etc/xl2tpd/xl2tpd.conf</p>
+
+<figure class='code'><figcaption><span>/etc/xl2tpd/xl2tpd&#46;conf </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[global]
+</span><span class='line'>    ipsec saref = no
+</span><span class='line'>
+</span><span class='line'>[lns default]
+</span><span class='line'>    ip range = 106.186.21.200-106.186.21.255
+</span><span class='line'>    local ip = 106.186.21.127
+</span><span class='line'>    ;require chap = yes
+</span><span class='line'>    refuse chap = yes
+</span><span class='line'>    refuse pap = yes
+</span><span class='line'>    require authentication = yes
+</span><span class='line'>    ppp debug = yes
+</span><span class='line'>    pppoptfile = /etc/ppp/options.xl2tpd
+</span><span class='line'>    length bit = yes</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
 <li>setup init script</li>
 </ul>
+
+
+<p>edit /etc/rc</p>
+
+<figure class='code'><figcaption><span>/etc/rc </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>iptables –table nat –append POSTROUTING –jump MASQUERADEecho 1 > /proc/sys/net/ipv4/ip_forward
+</span><span class='line'>for each in /proc/sys/net/ipv4/conf/*
+</span><span class='line'>do
+</span><span class='line'>echo 0 > $each/accept_redirects
+</span><span class='line'>echo 0 > $each/send_redirects
+</span><span class='line'>done
+</span><span class='line'>/etc/init.d/ipsec restart</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>link</h2>
