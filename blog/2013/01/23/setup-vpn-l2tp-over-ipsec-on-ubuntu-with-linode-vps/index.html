@@ -9,12 +9,9 @@
   <meta name="author" content="Yangjing Zhang">
 
   
-  <meta name="description" content="introduction usage tools: openwan
-ppp
-xl2tpd setp install openwan
-install ppp
-install xl2tpd
-setup boot init script link http://hi.baidu.com/ylm_tz/ &hellip;">
+  <meta name="description" content="introduction usage tools: openwan provide ipsec ability
+ppp suport for ppp
+xl2tpd support for l2tp step install openwan apt-get install openswan edit &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -100,19 +97,97 @@ setup boot init script link http://hi.baidu.com/ylm_tz/ &hellip;">
 <p>usage tools:</p>
 
 <ol>
-<li>openwan</li>
-<li>ppp</li>
-<li>xl2tpd</li>
+<li><p>openwan</p>
+
+<p> <em>provide ipsec ability</em></p></li>
+<li><p>ppp</p>
+
+<p> <em>suport for ppp</em></p></li>
+<li><p>xl2tpd</p>
+
+<p>  <em>support for l2tp</em></p></li>
 </ol>
 
 
-<h2>setp</h2>
+<h2>step</h2>
 
 <ul>
-<li>install openwan</li>
-<li>install ppp</li>
-<li>install xl2tpd</li>
-<li>setup boot init script</li>
+<li><p>install openwan</p>
+
+<p>  <code>
+  apt-get install openswan
+ </code>
+  edit /etc/ipsec.conf
+  &#8220;`
+  version 2.0</p>
+
+<p>  config setup</p>
+
+<pre><code>  nat_traversal=yes
+
+  virtual_private=%v4:10.0.0.0/8,%v4:192.168.0.0/16,%v4:172.16.0.0/12
+
+  oe=off
+
+  protostack=netkey
+</code></pre>
+
+<p>  conn L2TP-PSK-NAT</p>
+
+<pre><code>  rightsubnet=vhost:%priv
+
+  also=L2TP-PSK-noNAT
+</code></pre>
+
+<p>  conn L2TP-PSK-noNAT</p>
+
+<pre><code>  authby=secret
+
+  pfs=no
+
+  auto=add
+
+  keyingtries=3
+
+  rekey=no
+
+  ikelifetime=8h
+
+  keylife=1h
+
+  type=transport
+
+  left=106.186.21.127
+
+  leftprotoport=17/1701
+
+  right=%any
+
+  rightprotoport=17/%any
+</code></pre>
+
+<p>  &#8220;`</p>
+
+<p>  edit /etc/ipsec.secrets</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>106.186.21.127 %any: PSK "7758521"</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>install ppp</p>
+
+<p>  <code>
+  apt-get install ppp
+ </code></p></li>
+<li><p>install xl2tpd</p>
+
+<p>  <code>
+  apt-get install xl2tpd
+ </code></p></li>
+<li>setup init script</li>
 </ul>
 
 
